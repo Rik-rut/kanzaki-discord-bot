@@ -52,17 +52,15 @@ async def learn(ctx, question: str, answer: str):
     existing_item = next((item for item in existing_data if item["question"] == question), None)
     for item in existing_data:
         if isinstance(item["answer"], str):
-            item["answer"] = [item["answer"]]  # Convert single answer string to a list
-
+            item["answer"] = [item["answer"]] 
+            
     # Store the new data
     if existing_item:
-        # Question already exists, append the answer
-        existing_item["answer"].append(answer)  # Assuming answer is a list
+        existing_item["answer"].append(answer)  
     else:
-        # New question, create a new entry with a list of answers
         new_data = {
             "question": question,
-            "answer": [answer]  # Start with a list containing the new answer
+            "answer": [answer]  
         }
         existing_data.append(new_data)
 
