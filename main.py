@@ -71,7 +71,7 @@ async def learn(ctx, question: str, answer: str):
     await ctx.send("Thanks for teaching me sensei!")
     print(f"Data has been added and saved to {file_path}")
 
-
+#Enable the code below to limit the use of command to admins
 # learn.default_member_permissions = nextcord.Permissions(administrator=True)
 
 bot.run (bot_token)
